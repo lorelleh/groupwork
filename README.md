@@ -35,6 +35,8 @@ This experiment implements multi-class semantic segmentation using the **PyTorch
 - Optimizer: AdamW
 - Loss: CrossEntropyLoss + DiceLoss (weighted fusion)
 
+---
+
 ### 2.2. Hyperparameters
 ```python
 SCALE = 0.5
@@ -51,6 +53,8 @@ USE_AMP = True
 - **mean Dice**: Mean Dice similarity coefficient for region overlap
 - **FWIoU (Frequency Weighted IoU)**: IoU weighted by class pixel frequency
 - **Pixel Accuracy**: Overall pixel-wise classification accuracy
+
+---
 
 ### 2.4. Results
 #### 2.4.1 Overall Performance
@@ -86,13 +90,13 @@ ID | Class | IoU | Dice
 #### 2.4.4 Empty / Non-predicted Classes
 Classes 4, 7, 8, 9, 10, 11, 12, 18, 21, 22, 23 have no valid samples or predictions (IoU/Dice = 0.0).
 
+---
+
 ### 2.5. Conclusion
 1. The UNet model achieves strong overall segmentation performance: **mIoU ≈ 83%, mean Dice ≈ 89%, FWIoU ≈ 95.8%**.
 2. Most major classes have IoU > 90%, indicating stable segmentation.
 3. Classes 20, 24, and 25 show relatively low accuracy and require more data, augmentation, or loss weighting.
 4. A large number of empty classes exist; class merging or removal is recommended for future simplification.
-
----
 
 ### 2.6 Appendix
 🔗 Access to Model Weights
@@ -102,6 +106,7 @@ All trained model checkpoints are hosted externally due to GitHub's file size li
 - File list:
   - `checkpoint_epoch1.pth` ~ `checkpoint_epoch10.pth`
 - Place the downloaded files into the `checkpoints/` folder in your local copy of the repository.
+
 ---
 
 ## 3D Reconstruction
