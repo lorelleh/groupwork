@@ -24,8 +24,8 @@ This assignment focuses on Monocular VO mode, which:
 
 ---
 
-# 2.UNet Semantic Segmentation 
-## 2.1. Overview
+## 2.UNet Semantic Segmentation 
+### 2.1. Overview
 This experiment implements multi-class semantic segmentation using the **PyTorch UNet** framework on the AMtown dataset.
 - Dataset: AMtown (26 classes)
 - Training set: splits 01 + 03
@@ -35,7 +35,7 @@ This experiment implements multi-class semantic segmentation using the **PyTorch
 - Optimizer: AdamW
 - Loss: CrossEntropyLoss + DiceLoss (weighted fusion)
 
-## 2.2. Hyperparameters
+### 2.2. Hyperparameters
 ```python
 SCALE = 0.5
 BATCH_SIZE = 2
@@ -46,14 +46,14 @@ NUM_CLASSES = 26
 USE_AMP = True
 ```
 
-## 2.3. Evaluation Metrics
+### 2.3. Evaluation Metrics
 - **mIoU (mean Intersection over Union)**: Average IoU across all valid classes
 - **mean Dice**: Mean Dice similarity coefficient for region overlap
 - **FWIoU (Frequency Weighted IoU)**: IoU weighted by class pixel frequency
 - **Pixel Accuracy**: Overall pixel-wise classification accuracy
 
-## 2.4. Results
-### 2.4.1 Overall Performance
+### 2.4. Results
+#### 2.4.1 Overall Performance
 | Metric | With Background | Without Background |
 |--------|-----------------|---------------------|
 | mean IoU | 0.8297 | 0.8248 |
@@ -61,7 +61,7 @@ USE_AMP = True
 | Pixel Accuracy | 0.9775 | 0.9775 |
 | **FWIoU** | **0.9580** | — |
 
-### 2.4.2 Per-class Results (Valid Classes Only)
+#### 2.4.2 Per-class Results (Valid Classes Only)
 ID | Class | IoU | Dice
 ---|-------|-----|------
 0 | background | 0.8975 | 0.9460
@@ -80,13 +80,13 @@ ID | Class | IoU | Dice
 24 | - | 0.7261 | 0.8413
 25 | - | 0.2179 | 0.3579
 
-### 2.4.3 Unet prediction samples
+#### 2.4.3 Unet prediction samples
 <img width="842" height="674" alt="amtown_unet_prediction_samples" src="https://github.com/user-attachments/assets/194d2241-1b99-4bf3-a4cd-504413904d3b" />
 
-### 2.4.4 Empty / Non-predicted Classes
+#### 2.4.4 Empty / Non-predicted Classes
 Classes 4, 7, 8, 9, 10, 11, 12, 18, 21, 22, 23 have no valid samples or predictions (IoU/Dice = 0.0).
 
-## 2.5. Conclusion
+### 2.5. Conclusion
 1. The UNet model achieves strong overall segmentation performance: **mIoU ≈ 83%, mean Dice ≈ 89%, FWIoU ≈ 95.8%**.
 2. Most major classes have IoU > 90%, indicating stable segmentation.
 3. Classes 20, 24, and 25 show relatively low accuracy and require more data, augmentation, or loss weighting.
@@ -94,8 +94,8 @@ Classes 4, 7, 8, 9, 10, 11, 12, 18, 21, 22, 23 have no valid samples or predicti
 
 ---
 
-# 3 Appendix
-### 🔗 Access to Model Weights
+### 2.6 Appendix
+🔗 Access to Model Weights
 
 All trained model checkpoints are hosted externally due to GitHub's file size limits.
 - Download link: https://drive.google.com/drive/folders/1zsZdff4LPjpMcnU846Pm7wCTq5qtn5OS?usp=sharing
