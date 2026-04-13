@@ -79,7 +79,7 @@ Rotation drift rate:        106.7148 deg/100m
 
 ### 1.6. Trajectory Comparison
 
-![Trajectory Evaluation](https://github.com/lorelleh/assignment2/blob/3b74b37357a7b9544aaddd4deb5fc78f32525b4d/image/Trajectory%20Comparison.png)
+![Trajectory Evaluation](https://github.com/lorelleh/groupwork/blob/dff0b8200b465ca4f50e749d0c8e242a99001ec5/ppt/Trajectory%20Comparison.png)
 
 This figure is generated from the same inputs used for evaluation (`ground_truth.tum` and `CameraTrajectory_sec.tum`) and includes:
 
