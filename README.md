@@ -89,7 +89,14 @@ Classes 4, 7, 8, 9, 10, 11, 12, 18, 21, 22, 23 have no valid samples or predicti
 3. Classes 20, 24, and 25 show relatively low accuracy and require more data, augmentation, or loss weighting.
 4. A large number of empty classes exist; class merging or removal is recommended for future simplification.
 
+#Appendix
+### 🔗 Access to Model Weights
 
+All trained model checkpoints are hosted externally due to GitHub's file size limits.
+- Download link: https://drive.google.com/drive/folders/1zsZdff4LPjpMcnU846Pm7wCTq5qtn5OS?usp=sharing
+- File list:
+  - `checkpoint_epoch1.pth` ~ `checkpoint_epoch10.pth`
+- Place the downloaded files into the `checkpoints/` folder in your local copy of the repository.
 ---
 
 ## 3D Reconstruction
