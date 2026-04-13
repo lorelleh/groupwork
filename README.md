@@ -91,9 +91,10 @@ Classes 4, 7, 8, 9, 10, 11, 12, 18, 21, 22, 23 have no valid samples or predicti
 2. Most major classes have IoU > 90%, indicating stable segmentation.
 3. Classes 20, 24, and 25 show relatively low accuracy and require more data, augmentation, or loss weighting.
 4. A large number of empty classes exist; class merging or removal is recommended for future simplification.
-![Uploading amtown_unet_prediction_samples.png…]()
 
-#Appendix
+---
+
+# 3 Appendix
 ### 🔗 Access to Model Weights
 
 All trained model checkpoints are hosted externally due to GitHub's file size limits.
