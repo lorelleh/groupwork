@@ -178,34 +178,34 @@ All trained model checkpoints are hosted externally due to GitHub's file size li
 
 ---
 
-## 3D Reconstruction
+## 3.3D Reconstruction
 ![Uploading ScreenShot_2026-04-13_191859_217.png…]()
 
 
-## 1. Project Overview & Research Dedication
+## 3.1 Project Overview & Research Dedication
 This module focuses on the high-fidelity digital twin reconstruction of the **HKisland_GNSS03** area. To achieve superior reconstruction quality, this project involved intensive experimental trials, balancing high-density geometric accuracy with cutting-edge GPU acceleration frameworks.
 
-## 2. Methodology & Implementation Effort
+## 3.2 Methodology & Implementation Effort
 * **Exhaustive SfM Pre-processing**: To establish a high-precision spatial foundation, a rigorous Structure-from-Motion (SfM) pipeline was executed on **1,919 high-resolution UAV images**. This involved an exhaustive **48-hour continuous processing window** to ensure maximum feature matching density and database integrity.
 * **Iterative Optimization Trials**: Significant effort was invested in attempting to integrate external Visual Odometry (VO) trajectories for pose refinement. Although various fusion strategies were thoroughly tested, environmental constraints required a strategic pivot to a high-density SfM baseline to maintain the highest level of scientific validity.
 
-## 3. Technical Challenges & Infrastructure Debugging
+## 3.3 Technical Challenges & Infrastructure Debugging
 The implementation phase faced substantial technical hurdles due to the cutting-edge nature of the hardware environment:
 * **Deep-Level Environment Conflicts**: Utilizing the **NVIDIA RTX 5090 (CUDA 12.8)** introduced complex **ABI (Application Binary Interface) conflicts** between the OpenSplat framework, the system's C++ libraries, and the PyTorch backend.
 * **Architectural Troubleshooting**: Resolving persistent `undefined reference` and `GLIBCXX_USE_CXX11_ABI` errors required a **manual reconstruction of the project's CMake configuration** and extensive modifications to the linking logic to ensure compatibility with the sm_90 architecture.
 * **Final Optimization Strategy**: After exhaustive attempts to stabilize trajectory-fused models under unstable environmental conditions, the decision was made to revert to the optimized SfM-based version. This represents the most robust and geometrically consistent representation of the HKisland site achievable under current hardware-software synchronization limits.
 
-## 4. Key Results
+## 3.4 Key Results
 * **Point Cloud Density**: Successfully generated a sparse baseline containing **1.89 Million 3D points** (81.3 MB), providing a superior initialization for Gaussian kernels compared to standard sparse sets.
 * **Computational Intensity**: Leveraged the RTX 5090’s high-memory backend to complete **30,000 optimization iterations**, ensuring high-frequency detail recovery for complex urban vegetation.
 * **Deliverable**: The final `splat.ply` model (75MB) is optimized for spatial statistical analysis of urban cooling effects and canopy density monitoring.
 
-## 5. Complete Data Access (Large Files)
+## 3.5 Complete Data Access (Large Files)
 Due to the significant scale of the reconstruction data (3.4GB+ total), the full project package—including the SfM database, camera poses, and the final Gaussian primitives—is hosted externally:
 
 🔗 **[Download Full Project Dataset & Results (Google Drive)](https://drive.google.com/file/d/1uuO0mwT0dL6jG6BijaBnPrmrUoW4Gm9i/view?usp=drive_link)**
 
-## 6. Visualization
+## 3.6 Visualization
 <img width="1821" height="1305" alt="final_render" src="https://github.com/user-attachments/assets/6588d66c-72d1-4c76-8c05-4777472c985e" />
 *Figure: The final high-fidelity reconstruction achieved after 30,000 iterations and rigorous environmental tuning.*
 
